@@ -63,3 +63,6 @@
 /drush
 /drupal.phar
 /drupal
+
+# Ignore stupid Mac crapola
+.DS_Store
