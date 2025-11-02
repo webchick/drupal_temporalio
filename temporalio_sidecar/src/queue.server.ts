@@ -34,4 +34,4 @@ app.post('/queue/enqueue', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('Temporal.io queue server listening'));
+app.listen(process.env.PORT || 3000, () => console.log('Temporal queue server listening'));

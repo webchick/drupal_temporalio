@@ -11,19 +11,19 @@ class SettingsForm extends ConfigFormBase {
 
   public function buildForm(array $form, FormStateInterface $form_state) {
     $cfg = $this->config('temporalio_common.settings');
-    $form['temporal_ui_base_url'] = [
+    $form['temporal_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Temporal UI base URL'),
-      '#default_value' => $cfg->get('temporal_ui_base_url') ?: 'http://localhost:3000',
+      '#default_value' => $cfg->get('temporal_url') ?: 'http://localhost:3000',
       '#required' => TRUE,
-      '#description' => $this->t('Base URL of the Temporal.io worker UI.'),
+      '#description' => $this->t('Base URL of the Temporal worker UI.'),
     ];
     $form['hmac_secret'] = [
       '#type' => 'textfield',
       '#title' => $this->t('HMAC shared secret'),
       '#default_value' => $cfg->get('hmac_secret') ?: '',
       '#required' => TRUE,
-      '#description' => $this->t('Shared secret used to sign requests between Drupal and the Temporal.io runtime.'),
+      '#description' => $this->t('Shared secret used to sign requests between Drupal and the Temporal runtime.'),
     ];
     return parent::buildForm($form, $form_state);
   }
@@ -31,7 +31,7 @@ class SettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
     $this->configFactory->getEditable('temporalio_common.settings')
-      ->set('temporal_ui_base_url', $form_state->getValue('temporalio_base_url'))
+      ->set('temporal_url', $form_state->getValue('temporalio_base_url'))
       ->set('hmac_secret', $form_state->getValue('hmac_secret'))
       ->save();
   }

@@ -10,7 +10,7 @@ function temporalio_batch_set(array $batch): string {
 
 function temporalio_batch_process(?string $redirect = NULL, ?string $batch_id = NULL) {
   $id = $batch_id ?: \Drupal::state()->get('temporalio_batch.last_id');
-  if (!$id) throw new \RuntimeException('No Temporal.io batch to process. Call temporalio_batch_set() first.');
+  if (!$id) throw new \RuntimeException('No Temporal batch to process. Call temporalio_batch_set() first.');
   $url = \Drupal\Core\Url::fromRoute('temporalio_batch.status', ['batchId' => $id]);
   return new \Symfony\Component\HttpFoundation\RedirectResponse($url->toString());
 }
