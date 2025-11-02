@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx src/queue.server.ts & tsx src/batch.server.ts & tsx src/cron.schedule.server.ts",
+    "dev": "tsx src/server.ts",
     "worker": "tsx src/worker.ts"
   },
   "dependencies": {
