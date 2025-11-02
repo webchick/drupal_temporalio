@@ -1,0 +1,5 @@
+temporalio_common.settings_link:
+  title: 'Temporal.io settings'
+  description: 'Configure Temporal.io worker URL and HMAC secret.'
+  route_name: temporalio_common.settings
+  parent: system.admin_config_system
