@@ -16,14 +16,14 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Sidecar base URL'),
       '#default_value' => $cfg->get('sidecar_base_url') ?: 'http://localhost:3000',
       '#required' => TRUE,
-      '#description' => $this->t('Base URL of the TemporalIO worker/bridge.'),
+      '#description' => $this->t('Base URL of the Temporal.io worker/bridge.'),
     ];
     $form['hmac_secret'] = [
       '#type' => 'textfield',
       '#title' => $this->t('HMAC shared secret'),
       '#default_value' => $cfg->get('hmac_secret') ?: '',
       '#required' => TRUE,
-      '#description' => $this->t('Shared secret used to sign requests between Drupal and the TemporalIO runtime.'),
+      '#description' => $this->t('Shared secret used to sign requests between Drupal and the Temporal.io runtime.'),
     ];
     return parent::buildForm($form, $form_state);
   }

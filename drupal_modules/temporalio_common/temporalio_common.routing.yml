@@ -2,6 +2,6 @@ temporalio_common.settings:
   path: '/admin/config/system/temporalio-common'
   defaults:
     _form: '\Drupal\temporalio_common\Form\SettingsForm'
-    _title: 'TemporalIO Common Settings'
+    _title: 'Temporal.io Common Settings'
   requirements:
     _permission: 'administer site configuration'

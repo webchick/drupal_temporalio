@@ -57,4 +57,4 @@ app.post('/schedules/delete', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('TemporalIO cron server listening'));
+app.listen(process.env.PORT || 3000, () => console.log('Temporal.io cron server listening'));

@@ -34,4 +34,4 @@ app.post('/batch/start', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('TemporalIO batch server listening'));
+app.listen(process.env.PORT || 3000, () => console.log('Temporal.io batch server listening'));
