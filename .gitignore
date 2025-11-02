@@ -66,3 +66,7 @@
 
 # Ignore stupid Mac crapola
 .DS_Store
+
+# Ignore node stuff
+temporalio_sidecar/.env*
+temporalio_sidecar/node_modules
