@@ -6,7 +6,4 @@ services:
     arguments:
       - '@http_client'
       - '@temporalio_common.settings'
-      - '@temporalio_queue.decorating_factory.inner'
-
-  Drupal\temporalio_queue\Controller\TemporalQueueController:
-    arguments: ['@plugin.manager.queue_worker', '@request_stack', '@temporalio_common.settings']
+      - '@temporalio_queue.decorating_factory.inner'   # the original QueueFactory

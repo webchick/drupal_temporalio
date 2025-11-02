@@ -20,7 +20,14 @@ class TemporalQueue implements QueueInterface {
     $body = json_encode($payload, JSON_UNESCAPED_SLASHES);
     $ts = (string) time();
     $sig = hash_hmac('sha256', $ts . '.' . $body, $this->secret());
-    return {'headers': {'Content-Type': 'application/json', 'X-Signature': $sig, 'X-Timestamp': $ts}, 'body': $body};
+    return [
+      'headers' => [
+        'Content-Type' => 'application/json',
+        'X-Signature' => $sig,
+        'X-Timestamp' => $ts,
+      ],
+      'body' => $body,
+    ];
   }
 
   public function createItem($data) {
